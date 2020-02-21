@@ -1,5 +1,6 @@
 from string import punctuation
 import json
+import numpy as np
 
 class Preprocessing:
     def __init__(self):
@@ -22,3 +23,23 @@ class Preprocessing:
         test_ints.append([self.vocab_to_int[word] for word in test_words])
 
         return test_ints
+
+    def pad_features(self, reviews_ints, seq_length = 10):
+        ''' Return features of review_ints, where each review is padded with 0's 
+            or truncated to the input seq_length.
+        '''
+        
+        # getting the correct rows x cols shape
+        features = np.zeros((len(reviews_ints), seq_length), dtype=int)
+
+        # for each review, I grab that review and 
+        for i, row in enumerate(reviews_ints):
+            if len(row) > seq_length:
+                row = row[-seq_length:]
+            features[i, -len(row):] = np.array(row)[:seq_length]
+        
+        return features
+
+
+    def get_vocab (self):
+        return self.vocab_to_int

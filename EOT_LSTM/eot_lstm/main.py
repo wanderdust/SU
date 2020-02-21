@@ -1,4 +1,7 @@
 from preprocessing import Preprocessing
+from predict import Predict
 
-preprocessing = Preprocessing()
-print(preprocessing.tokenize_review("Turn on the lights"))
+utterance = "volume up please"
+
+predict = Predict()
+print(predict.predict(utterance))

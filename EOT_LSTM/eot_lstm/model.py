@@ -62,12 +62,8 @@ class SentimentRNN(nn.Module):
         # initialized to zero, for hidden state and cell state of LSTM
         weight = next(self.parameters()).data
         
-        if (train_on_gpu):
-            hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().cuda(),
-                  weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().cuda())
-        else:
-            hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_(),
-                      weight.new(self.n_layers, batch_size, self.hidden_dim).zero_())
+        hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_(),
+                    weight.new(self.n_layers, batch_size, self.hidden_dim).zero_())
         
         return hidden
         
