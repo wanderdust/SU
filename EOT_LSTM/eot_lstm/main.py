@@ -1,7 +1,12 @@
-from preprocessing import Preprocessing
-from predict import Predict
+"""
+RUN THE SERVER --> FLASK_APP=server.py flask run
+"""
+import requests
 
-utterance = "volume up please"
+utterance = "Turn the "
 
-predict = Predict()
-print(predict.predict(utterance))
+r = requests.post(
+    "http://127.0.0.1:5000/api/predict/",
+    data= utterance ).json()
+
+print(r['pred_str'])
