@@ -4,7 +4,7 @@ RUN THE SERVER --> FLASK_APP=server.py flask run
 import requests
 from utils.redirect import check
 
-utterance = "Turn the "
+utterance = "Can you please turn the "
 
 def redirect (utterance):
 
