@@ -1,0 +1,5 @@
+numpy
+pandas
+torch
+flask
+flask_cors
