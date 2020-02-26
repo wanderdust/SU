@@ -19,6 +19,17 @@
 - that sounds good
 - correct
 
+## intent:fillers
+- [hmmmm](filler)
+- [haaaa](filler)
+- [mmmm](filler)
+- [ehh](filler)
+
+## intent:filler_sentence
+- please switch on [hmmmm](filler)
+- please switch on [ehh](filler)
+- please switch on [haaaa](filler)
+
 ## intent:deny
 - no
 - never
