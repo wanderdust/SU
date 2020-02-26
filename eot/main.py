@@ -3,6 +3,7 @@ RUN THE SERVER --> FLASK_APP=server.py flask run
 """
 import requests
 from utils.redirect import check
+from utils.alana import request_alana
 
 utterance = "Can you please turn the "
 
@@ -14,14 +15,15 @@ def redirect (utterance):
 
     if response.status_code == 200:
         # Response from LSTM
-        print(response.json()['pred_int'])
-        print(response.json()['pred_str'])
-        print(response.json()['confidence'])
+        #   response.json()['pred_int'] == 0 --> incomplete
+        #   response.json()['pred_int] == 1 --> complete
 
         if response.json()['pred_int'] == 0:
-            print("Sentence is incomplete. Redirecting to our bot!")
+            print("Sentence is incomplete. Redirecting to our bot!\n")
+            # Redirect to our bot HERE!
         else:
-            print("Sentence is complete. Redirecting to Alana")
+            print("Sentence is complete. Redirecting to Alana\n")
+            alana_response = request_alana(utterance)
     else:
         # Response from the script if lstm fails
         check(utterance)
