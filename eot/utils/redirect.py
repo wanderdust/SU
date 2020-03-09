@@ -1,4 +1,5 @@
 from utils.alana import request_alana
+from utils.conversation import conversation
 
 def check(utterance):
     utt_list = utterance.split()
@@ -11,6 +12,6 @@ def check(utterance):
     if word in antecedents:
         print("Your sentence is incomplete. Redirecting to our bot!\n")
         #redirect to our utterence completion bot
+        
     else:
-        print("Your sentence is complete! Redirecting to Alana\n")
-        alana_response = request_alana(utterance)
+        conversation(utterance)
