@@ -1,0 +1,114 @@
+2020-03-09 12:13:55,254 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:13:55,371 [ERROR]  Could not load model due to The model version is too old to be loaded by this Rasa NLU instance. Either retrain the model, or run with an older version. Model version: 1.6.1 Instance version: 1.8.1.
+2020-03-09 12:13:55,372 [ERROR]  Experienced exception while trying to serve
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/app.py", line 1167, in run
+    serve(**server_settings)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/server.py", line 892, in serve
+    trigger_events(before_start, loop)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/server.py", line 668, in trigger_events
+    loop.run_until_complete(result)
+  File "uvloop/loop.pyx", line 1456, in uvloop.loop.Loop.run_until_complete
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/run.py", line 253, in load_agent_on_start
+    action_endpoint=endpoints.action,
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/agent.py", line 271, in load_agent
+    remote_storage=remote_storage,
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/agent.py", line 938, in load_local_model
+    path_to_model_archive=model_archive,
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/agent.py", line 387, in load
+    interpreter = NaturalLanguageInterpreter.create(nlu_model)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/interpreter.py", line 54, in create
+    return RasaNLUInterpreter(model_directory=obj)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/interpreter.py", line 274, in __init__
+    self._load_interpreter()
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/interpreter.py", line 297, in _load_interpreter
+    self.interpreter = Interpreter.load(self.model_directory)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/nlu/model.py", line 300, in load
+    Interpreter.ensure_model_compatibility(model_metadata)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/nlu/model.py", line 275, in ensure_model_compatibility
+    "".format(model_version, rasa.__version__)
+rasa.nlu.model.UnsupportedModelError: The model version is too old to be loaded by this Rasa NLU instance. Either retrain the model, or run with an older version. Model version: 1.6.1 Instance version: 1.8.1
+2020-03-09 12:16:06,474 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:23:32,999 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:23:36,145 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/server.py", line 895, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "uvloop/loop.pyx", line 1456, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1727, in create_server
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 5005): address already in use
+2020-03-09 12:32:48,226 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:33:02,172 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/conversations/default/respond'
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/app.py", line 940, in handle_request
+    handler, args, kwargs, uri, name = self.router.get(request)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/router.py", line 411, in get
+    return self._get(request.path, request.method, "")
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/router.py", line 475, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /conversations/default/respond not found
+2020-03-09 12:33:05,906 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 173, in load_json
+    self.parsed_json = loads(self.body)
+ValueError: Expected object or value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/app.py", line 976, in handle_request
+    response = await response
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 462, in receive
+    sender_id = await self._extract_sender(request)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 412, in _extract_sender
+    return req.json.get("sender", None)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 167, in json
+    self.load_json()
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 177, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2020-03-09 12:33:08,982 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 173, in load_json
+    self.parsed_json = loads(self.body)
+ValueError: Expected object or value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/app.py", line 976, in handle_request
+    response = await response
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 462, in receive
+    sender_id = await self._extract_sender(request)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 412, in _extract_sender
+    return req.json.get("sender", None)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 167, in json
+    self.load_json()
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 177, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2020-03-09 12:49:47,181 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:50:11,135 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:53:02,483 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 12:56:45,341 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 173, in load_json
+    self.parsed_json = loads(self.body)
+ValueError: Expected object or value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/app.py", line 976, in handle_request
+    response = await response
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 462, in receive
+    sender_id = await self._extract_sender(request)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/rasa/core/channels/channel.py", line 412, in _extract_sender
+    return req.json.get("sender", None)
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 167, in json
+    self.load_json()
+  File "/home/pablo/anaconda3/envs/Alana/lib/python3.6/site-packages/sanic/request.py", line 177, in load_json
+    raise InvalidUsage("Failed when parsing body as json")
+sanic.exceptions.InvalidUsage: Failed when parsing body as json
+2020-03-09 12:59:59,686 [INFO ]  Starting Rasa server on http://localhost:5005
+2020-03-09 13:05:23,943 [INFO ]  Starting Rasa server on http://localhost:5005
