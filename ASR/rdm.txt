@@ -15,4 +15,6 @@ speakers / loud environments : the returned sentence will be a mix of different 
 If the program is stuck at "Microphone Listening...", check the microphone settings. It may also be caused by headphones being plugged in
 for some reason. If nothing is captured by the microphone, a blank error will be returned.
  
-
+ The "Success" print line is there to verify the step process, can be taken out.
+ 
+The last two lines save the recording to "Mic_Record" file and was used for testing. Can be taken out. 
