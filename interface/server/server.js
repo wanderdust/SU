@@ -1,9 +1,12 @@
 const path = require("path");
-var express = require('express')
+const express = require('express')
 const app = express();
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
-var bodyParser = require("body-parser");
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+const bodyParser = require("body-parser");
+require('./src/db/mongoose')
+
+const populateDB = require("./src/db/populatedb"); // Uncomment code to create db
 
 
 const publicPath = path.join(__dirname, "..", "public");
@@ -15,6 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// API ROUTE
 app.post('/webapp/api', (req, res) => {
     let query = req.body
     console.log(query)
