@@ -2,17 +2,17 @@ Requirements : google account
 
 I created a project where I need to add people manually using their @, but uou can also create your own using the following links.
 
-https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries
+https://cloud.google.com/sdk/docs : Install Google SDK
 
-https://cloud.google.com/sdk/docs 
+https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries : Install speech recognition library
 
+JSON file : private key to access the project
 
-
-Launch the asr.py and if everything is setup correctly, a message with "Microphone Listening..." should appear. 
+Launch the ASR.py and if everything is setup correctly, a message with "Microphone Listening..." should appear. 
 The program will then show you the text it hears as soon as it detects the end of an utterance. It doesn't work well with multiple
 speakers / loud environments : the returned sentence will be a mix of different sentences.
 
 If the program is stuck at "Microphone Listening...", check the microphone settings. It may also be caused by headphones being plugged in
-for some reason.
+for some reason. If nothing is captured by the microphone, a blank error will be returned.
  
 
