@@ -20,13 +20,29 @@ body, html{
 
 .tv-container {
     position: absolute;
-    top: 245px;
+    top: 242px;
     left: 608px;
 }
-
 
 .lights-container {
     position: absolute;
     top: 110px;
     left: 640px;
+}
+
+.heating-container {
+    position: absolute;
+    top: 490px;
+    left: 680px;
+}
+
+.music-container {
+    position: absolute;
+    top: 250px;
+    left: 750px;
+    height: 20px;
+}
+
+.heating-container img {
+    transform: rotate(2deg);
 }

@@ -1,5 +1,6 @@
 // FOr tests only
-let data = {object: "music", toggle: "on"};
+/*
+let data = {object: "music", toggle: "off"};
 
 fetch("/webapp/api", {
   method: "POST", 
@@ -10,3 +11,5 @@ fetch("/webapp/api", {
 }).then(res => {
   console.log("Request status ", res.status);
 });
+
+*/

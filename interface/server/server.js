@@ -35,6 +35,9 @@ io.on('connection', (socket) => {
             object: query.object
         }, {
             toggle: query.toggle
+        },
+        {
+            new: true
         }).then(res => {
             io.sockets.emit('signal', {
                 object: res.object,
