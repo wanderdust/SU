@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
-const Object = mongoose.model('Object', {
+// Schema
+const objectSchema = new mongoose.Schema({
     object: {
         type: String,
         required: true,
@@ -12,5 +13,13 @@ const Object = mongoose.model('Object', {
         trim: true
     }
 })
+
+// Middleware
+objectSchema.post('findOneAndUpdate', (doc, next) => {
+
+    next()
+})
+
+const Object = mongoose.model('Object', objectSchema)
 
 module.exports = Object

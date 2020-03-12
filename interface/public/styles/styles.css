@@ -1,0 +1,32 @@
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#livingroom-container {
+    width: 1200px;
+    position: relative;
+}
+
+.livingroom {
+    width: 100%;
+}
+
+.tv-container {
+    position: absolute;
+    top: 245px;
+    left: 608px;
+}
+
+
+.lights-container {
+    position: absolute;
+    top: 110px;
+    left: 640px;
+}

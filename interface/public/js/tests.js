@@ -1,5 +1,5 @@
 // FOr tests only
-let data = {object: "lights", toggle: "on"};
+let data = {object: "music", toggle: "on"};
 
 fetch("/webapp/api", {
   method: "POST", 
@@ -8,5 +8,5 @@ fetch("/webapp/api", {
     'Content-Type': 'application/json'
   }
 }).then(res => {
-  console.log("Request complete! response:", res);
+  console.log("Request status ", res.status);
 });
