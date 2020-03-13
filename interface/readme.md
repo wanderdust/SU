@@ -12,3 +12,32 @@
 ## Quick start
 `npm run start-db`
 `npm start`
+
+
+## Making a request
+
+**api**: `localhost:3000/webapp/api`
+
+**posible requests:**
+
+```
+{object: "music", toggle: "off"} or {object: "music", toggle: "on"};
+{object: "lights", toggle: "off"} or {object: "lights", toggle: "on"};
+{object: "heating", toggle: "off"} or {object: "heating", toggle: "on"};
+{object: "tv", toggle: "off"} or {object: "tv", toggle: "on"};
+```
+
+**Javascript Example**
+```
+let data = {object: "music", toggle: "on"};
+
+fetch("localhost:3000/webapp/api", {
+  method: "POST", 
+  body: JSON.stringify(data),
+  headers:{
+    'Content-Type': 'application/json'
+  }
+}).then(res => {
+  console.log("Request status ", res.status);
+});
+```

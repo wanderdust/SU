@@ -10,8 +10,8 @@ def check(utterance):
     antecedents = ['and','but','or','so','is','are','because','the','a','my','your'] 
 
     if word in antecedents:
-        print("Your sentence is incomplete. Redirecting to our bot!\n")
         #redirect to our utterence completion bot
+        conversation_rasa(utterance)
         
     else:
         conversation(utterance)
