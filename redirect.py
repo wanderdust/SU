@@ -7,7 +7,7 @@ Created on Mon Feb 17 17:44:39 2020
 
 Incomplete Utterance
 """
-
+from utils.su import request_su
 
 # According to the Split utterance research paper these are the most commun split points in a dialogue:
 antecedents = ['and','but','or','so','is','are','because','the','a','my','your'] 
