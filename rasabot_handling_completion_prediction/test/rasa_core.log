@@ -1,0 +1,70 @@
+2020-03-01 12:51:23,539 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/visualization.html'
+Traceback (most recent call last):
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /visualization.html not found
+2020-03-06 00:50:33,579 [ERROR]  Experienced exception while trying to serve
+Traceback (most recent call last):
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/app.py", line 1096, in run
+    serve(**server_settings)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/server.py", line 742, in serve
+    trigger_events(before_start, loop)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/sanic/server.py", line 604, in trigger_events
+    loop.run_until_complete(result)
+  File "uvloop/loop.pyx", line 1450, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1443, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1351, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 519, in uvloop.loop.Loop._run
+  File "uvloop/loop.pyx", line 436, in uvloop.loop.Loop._on_idle
+  File "uvloop/cbhandles.pyx", line 90, in uvloop.loop.Handle._run
+  File "uvloop/cbhandles.pyx", line 68, in uvloop.loop.Handle._run
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/run.py", line 199, in load_agent_on_start
+    action_endpoint=endpoints.action,
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/agent.py", line 233, in load_agent
+    remote_storage=remote_storage,
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/agent.py", line 878, in load_local_model
+    remote_storage=remote_storage,
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/agent.py", line 371, in load
+    ensemble = PolicyEnsemble.load(core_model) if core_model else None
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/policies/ensemble.py", line 232, in load
+    policy = policy_cls.load(policy_path)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/rasa/core/policies/keras_policy.py", line 314, in load
+    model = load_model(model_file)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/keras/engine/saving.py", line 285, in load_model
+    model.optimizer.set_weights(optimizer_weight_values)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/keras/optimizers.py", line 132, in set_weights
+    param_values = K.batch_get_value(params)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/keras/backend.py", line 2819, in batch_get_value
+    return get_session().run(tensors)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/keras/backend.py", line 482, in get_session
+    _initialize_variables(session)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/keras/backend.py", line 765, in _initialize_variables
+    session.run(variables_module.variables_initializer(uninitialized_vars))
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1334, in _do_call
+    return fn(*args)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1319, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1407, in _call_tf_sessionrun
+    run_metadata)
+  File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/socketio/client.py", line 25, in signal_handler
+    return original_signal_handler(sig, frame)
+KeyboardInterrupt
+2020-03-06 21:10:00,490 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+2020-03-06 21:12:22,382 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+2020-03-06 21:28:38,148 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
