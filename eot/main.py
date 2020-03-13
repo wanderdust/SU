@@ -29,7 +29,5 @@ def redirect (utterance):
         # Response from the script if lstm fails
         check(utterance)
 
-
-
 # Run the script to for testing
 redirect(utterance)
