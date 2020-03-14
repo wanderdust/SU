@@ -69,4 +69,4 @@ class Predict:
         return pred.item(), self.prediction, confidence
 
     def load_net_weights (self, path="models/RNN_EOT.pth"):
-        self.net.load_state_dict(torch.load(path))
+        self.net.load_state_dict(torch.load(path), map_location=torch.device("cpu"))
