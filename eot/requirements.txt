@@ -3,3 +3,5 @@ pandas
 torch
 flask
 flask_cors
+SpeechRecognition
+pyAudio

@@ -5,9 +5,10 @@ import requests
 from utils.redirect import check
 from utils.alana import request_alana
 from utils.conversation import conversation, conversation_rasa
+from utils.asr import asr
 
 
-utterance = input(">> Enter your utterance: ")
+utterance = asr()
 
 def redirect (utterance):
 

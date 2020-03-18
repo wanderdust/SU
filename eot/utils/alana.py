@@ -16,4 +16,4 @@ def request_alana(utterance):
     r= requests.post(url='http://52.23.135.246:5000', json=data)
     response = r.json()
 
-    print(response['result'])
+    return response['result']
