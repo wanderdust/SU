@@ -26,6 +26,5 @@ def request_su (utterance):
     try: 
         text = json.loads(r.text)[1]["text"]
     except:
-        text = None
-
+        text = False
     return text

@@ -27,21 +27,28 @@ def conversation (initial_utterance="Hello"):
 
 def conversation_rasa (initial_utterance):
     print("Sentence is incomplete. Redirecting to our bot!\n")
-
+        
     # 1. send request to alana here with initial utterance
     # 1b. Get alana's response
     text = request_su(initial_utterance)
-    tts(text)
 
-    if text == None:
-        print("Sorry I didn't get that ")
+    if text == False:
+        tts(None, empty=True)
         return
 
+    tts(text)
     print(text)
     utterance = asr()
 
     # 2. Send our response
     # 2b. Send utterance to alana
-    print("Okay, turning {} {}".format(utterance[0], utterance[1]))
-    command = {"object": utterance[0], "toggle": utterance[1]}
+    utt_split = utterance.split(" ")
+    print("Okay, turning {} {}".format(utt_split[0], utt_split[1]))
+    
+    try:
+        tts("Okay, turning {} {}".format(utt_split[0], utt_split[1]))
+    except:
+        tts("Okay")
+
+    command = {"object": utt_split[0], "toggle": utt_split[1]}
     request_interface(command)
