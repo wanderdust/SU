@@ -12,13 +12,14 @@ def request_su (utterance):
     rand = random.randint(0,100000)
 
     url = "http://localhost:5005/webhooks/rest/webhook"
-    data = {"sender": str(rand), "message": utterance}
+    data = {"sender": "user", "message": utterance}
     json_data = json.dumps(data)
 
     r = requests.post(url, data = json_data)
     text = ""
+
     try: 
-        text = json.loads(r.text)[1]["text"]
+        text = json.loads(r.text)[0]["text"]
     except:
         text = False
     return text
