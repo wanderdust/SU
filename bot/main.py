@@ -3,11 +3,12 @@ RUN THE SERVER --> FLASK_APP=server.py flask run
 """
 import requests
 from utils.redirect import check
-from utils.alana import request_alana
-from utils.conversation import conversation, conversation_rasa
+from bots.alana import request_alana
+from bots.conversation import conversation, conversation_rasa
+from speech_handlers.asr import asr
 
 
-utterance = input(">> Enter your utterance: ")
+utterance = asr(debug=True)
 
 def redirect (utterance):
 

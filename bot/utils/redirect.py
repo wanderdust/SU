@@ -1,5 +1,5 @@
-from utils.alana import request_alana
-from utils.conversation import conversation, conversation_rasa
+from bots.alana import request_alana
+from bots.conversation import conversation, conversation_rasa
 
 def check(utterance):
     utt_list = utterance.split()

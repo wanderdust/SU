@@ -1,5 +1,6 @@
 import requests
 
+# Sends a request to alana to keep a conversation.
 def request_alana(utterance):
     data = {
         'user_id': 'test-user',
@@ -16,4 +17,4 @@ def request_alana(utterance):
     r= requests.post(url='http://52.23.135.246:5000', json=data)
     response = r.json()
 
-    print(response['result'])
+    return response['result']

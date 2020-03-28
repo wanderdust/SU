@@ -1,6 +1,13 @@
-# Using the API
+# Install requirements.txt
 
-Use main.py for instructions on how to use.
+`pip install -r requirements.txt`
+
+If you have any problems with the library pyaudio, used for speech recognition, try to run:
+
+`conda install nwani::portaudio nwani::pyaudio`
+
+If you have any problems with `mpg123 not found` make sure you have installed that library. This library is used to play .mp3 files from the os. In linux: `sudo apt-get install mpg123` or `sudo apt-get install mpg321`.
+
 
 ## Start the server
 
@@ -17,7 +24,7 @@ It returns a tuple with three elements:
     3. Level of confidence for the prediction (as a percentage)
 
 
-Run the code
+Example found in `bot/main.py`
 ```
 import requests
 
