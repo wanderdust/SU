@@ -3,19 +3,31 @@ actions:
 - utter_did_that_help
 - utter_filler_ans1
 - utter_filler_ans2
+- utter_filler_ans3
+- utter_filler_ans5
 - utter_goodbye
 - utter_greet
 - utter_happy
 - utter_iamabot
+- utter_identify_location
+- utter_location
 entities:
 - filler
-- verb
+- location
+- noun
 - splitpoint
+- verb
 intents:
+- filler_sentence3_lights
+- filler_sentence2_music
+- filler_sentence1_heating
+- noun
+- identify_location
 - greet
-- filler_sentence
 - goodbye
 - affirm
+- location
+- filler_sentence5
 - deny
 - mood_great
 - mood_unhappy
@@ -30,9 +42,13 @@ templates:
   utter_did_that_help:
   - text: Did that help you?
   utter_filler_ans1:
-  - text: light?  Oven? Heating?
+  - text: Do you mean heating? or Do you mean music?
   utter_filler_ans2:
-  - text: Music? TV?
+  - text: Do you mean Music? Do you mean TV? or Do you mean heating?
+  utter_filler_ans3:
+  - text: -text
+  utter_filler_ans5:
+  - text: Switch on the light?  Do you mean Oven? or Do you mean Heating?
   utter_goodbye:
   - text: Bye
   utter_greet:
@@ -41,3 +57,5 @@ templates:
   - text: Great, carry on!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_identify_location:
+  - text: You want me to do in the living room?
