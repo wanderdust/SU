@@ -1,3 +1,13 @@
+# Install requirements.txt
+
+`pip install -r requirements.txt`
+
+If you have any problems with the library pyaudio, used for speech recognition, try to run:
+
+`conda install nwani::portaudio nwani::pyaudio`
+
+If you have any problems with `mpg123 not found` make sure you have installed that library. This library is used to play .mp3 files from the os. In linux: `sudo apt-get install mpg123` or `sudo apt-get install mpg321`.
+
 # Using the API
 
 Use main.py for instructions on how to use.

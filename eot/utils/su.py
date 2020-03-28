@@ -15,7 +15,7 @@ def request_su (utterance):
         - rasa run actions -v
         - rasa run
     """
-    rand = random.randint(0,9)
+    rand = random.randint(0,100000)
 
     url = "http://localhost:5005/webhooks/rest/webhook"
     data = {"sender": str(rand), "message": utterance}
