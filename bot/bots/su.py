@@ -9,15 +9,14 @@ def request_su (utterance):
         - rasa run actions -v
         - rasa run
     """
-    rand = random.randint(0,100000)
+    rand = random.randint(0,1000000)
 
     url = "http://localhost:5005/webhooks/rest/webhook"
-    data = {"sender": "user", "message": utterance}
+    data = {"sender": str(rand), "message": utterance}
     json_data = json.dumps(data)
 
     r = requests.post(url, data = json_data)
     text = ""
-
     try: 
         text = json.loads(r.text)[0]["text"]
     except:
