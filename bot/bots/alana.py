@@ -1,5 +1,6 @@
 import requests
 
+# Sends a request to alana to keep a conversation.
 def request_alana(utterance):
     data = {
         'user_id': 'test-user',

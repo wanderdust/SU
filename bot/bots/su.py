@@ -2,13 +2,7 @@ import requests
 import json
 import random
 
-def request_interface (command):
-    url = "http://localhost:3000/webapp/api"
-    json_data = json.dumps(command)
-    headers = {'Content-type': 'application/json'}
-    r = requests.post(url, data = json_data, headers=headers)
-
-
+# Request to rasa bot (su)
 def request_su (utterance):
     """
     HOw to use rasa:
@@ -28,3 +22,10 @@ def request_su (utterance):
     except:
         text = False
     return text
+
+# Request to the interface to turn on/off lights/heating/tv/music
+def request_interface (command):
+    url = "http://localhost:3000/webapp/api"
+    json_data = json.dumps(command)
+    headers = {'Content-type': 'application/json'}
+    r = requests.post(url, data = json_data, headers=headers)

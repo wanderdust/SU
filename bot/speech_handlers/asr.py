@@ -1,6 +1,7 @@
 import speech_recognition as sr
 
-def asr():
+# Automatic speech recognition
+def asr(debug=False):
 
     r = sr.Recognizer()
 
@@ -11,14 +12,16 @@ def asr():
         r.dynamic_energy_threshold = False
         print("Microphone Listening")
 
-        audio = r.listen(source, timeout=1, phrase_time_limit=5)
+        audio = r.listen(source, phrase_time_limit=5)
 
         print("Interpreting... ")
 
         try:
             user_input = r.recognize_google(audio)
+
+            if debug:
+                print("You said: " + user_input)
         except:
             user_input = False
-            print("I didn't get that")
     return user_input    
     

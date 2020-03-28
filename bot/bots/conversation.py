@@ -1,10 +1,10 @@
-from utils.alana import request_alana
-from utils.su import request_interface, request_su
+from bots.alana import request_alana
+from bots.su import request_interface, request_su
 import json
-from utils.asr import asr
-from utils.tts import tts
+from speech_handlers.asr import asr
+from speech_handlers.tts import tts
 
-# Loop that keeps the conversation going.
+# Loop that keeps the conversation going with alana.
 def conversation (initial_utterance="Hello"):
     print("Your sentence is complete! Redirecting to Alana!")
     print("Say 'Stop' to exit\n")
@@ -24,7 +24,7 @@ def conversation (initial_utterance="Hello"):
         print(alana_response)
         tts(alana_response)
 
-
+# Loop that keeps the conversation going with rasa.
 def conversation_rasa (initial_utterance):
     print("Sentence is incomplete. Redirecting to our bot!\n")
         
