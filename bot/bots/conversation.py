@@ -3,6 +3,7 @@ from bots.su import request_interface, request_su
 import json
 from speech_handlers.asr import asr
 from speech_handlers.tts import tts
+from utils.find_item import find_item
 
 # Loop that keeps the conversation going with alana.
 def conversation (initial_utterance="Hello"):
@@ -25,30 +26,35 @@ def conversation (initial_utterance="Hello"):
         tts(alana_response)
 
 # Loop that keeps the conversation going with rasa.
-def conversation_rasa (initial_utterance):
+def conversation_rasa (initial_utterance, toggle):
     print("Sentence is incomplete. Redirecting to our bot!\n")
         
-    # 1. send request to alana here with initial utterance
-    # 1b. Get alana's response
+    # 1. send request to rasa here with initial utterance
+    # 1b. Get rasa's response
     text = request_su(initial_utterance)
 
+    # If rasa's response is empty, end conversation.
     if text == False:
-        tts(None, empty=True)
+        tts(None, empty=True) # Text to speech "Sorry I didn't get that"
         return
 
-    tts(text)
+    tts(text) # Text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
     print(text)
-    utterance = asr()
+
+    utterance = asr() # Listen to users new input
+    utterance_lower = utterance.lower() # Make it lowercase to avoid uppercase inconsistencies
+
+    # PRovisional. Find what item the user said (eg. Heating, music, etc)
+    item = find_item(utterance_lower)
 
     # 2. Send our response
     # 2b. Send utterance to alana
-    utt_split = utterance.split(" ")
-    print("Okay, turning {} {}".format(utt_split[0], utt_split[1]))
+    print("Okay, turning {} {}".format(item, toggle))
     
     try:
-        tts("Okay, turning {} {}".format(utt_split[0], utt_split[1]))
+        tts("Okay, turning {} {}".format(item, toggle))
     except:
         tts("Okay")
 
-    command = {"object": utt_split[0], "toggle": utt_split[1]}
+    command = {"object": item, "toggle": toggle}
     request_interface(command)
