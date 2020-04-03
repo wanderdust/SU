@@ -38,7 +38,8 @@ def conversation_rasa (initial_utterance, toggle):
     if text == False:
         tts("Sorry I didn't get that") # Text to speech "Sorry I didn't get that"
         return
-    # When the user says 
+
+    # Gives the user 2 chances to give a utterance
     for i in range(2):
         tts(text) # Text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
         print(text)
@@ -61,7 +62,7 @@ def conversation_rasa (initial_utterance, toggle):
     utterance_lower = utterance.lower() # Make it lowercase to avoid uppercase inconsistencies
 
     # PRovisional. Find what item the user said (eg. Heating, music, etc)
-    item = find_item(utterance_lower)
+    item = find_item(utterance_lower, text)
 
     # 2. Send our response
     # 2b. Send utterance to alana

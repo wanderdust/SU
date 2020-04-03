@@ -28,6 +28,3 @@ def find_item(utterance, rasa_output):
         return None
 
     return item
-
-item = find_item("Yes the fourth one", "Do you mean music? Do you mean heating? or do you mean tv?")
-print(item)
