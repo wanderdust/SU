@@ -1,7 +1,7 @@
 from bots.alana import request_alana
 from bots.conversation import conversation, conversation_rasa
 
-def check(utterance):
+def check(utterance, toggle):
     utt_list = utterance.split()
     res = len(utt_list) 
     word = utt_list[-1]
@@ -11,7 +11,7 @@ def check(utterance):
 
     if word in antecedents:
         #redirect to our utterence completion bot
-        conversation_rasa(utterance)
+        conversation_rasa(utterance, toggle)
         
     else:
         conversation(utterance)

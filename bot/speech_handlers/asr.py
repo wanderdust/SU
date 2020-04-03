@@ -12,7 +12,10 @@ def asr(debug=False):
         r.dynamic_energy_threshold = False
         print("Microphone Listening")
 
-        audio = r.listen(source, timeout=3, phrase_time_limit=5)
+        try:
+            audio = r.listen(source, timeout=3, phrase_time_limit=5)
+        except:
+            user_input = False
 
         print("Interpreting... ")
 
