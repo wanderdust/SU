@@ -1,6 +1,7 @@
+import json
+import sys
 from bots.alana import request_alana
 from bots.su import request_interface, request_su
-import json
 from speech_handlers.asr import asr
 from speech_handlers.tts import tts
 from utils.find_item import find_item
@@ -35,13 +36,28 @@ def conversation_rasa (initial_utterance, toggle):
 
     # If rasa's response is empty, end conversation.
     if text == False:
-        tts(None, empty=True) # Text to speech "Sorry I didn't get that"
+        tts("Sorry I didn't get that") # Text to speech "Sorry I didn't get that"
         return
+    # When the user says 
+    for i in range(2):
+        tts(text) # Text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
+        print(text)
 
-    tts(text) # Text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
-    print(text)
+        utterance = asr() # Listen to users new input
 
-    utterance = asr() # Listen to users new input
+        if utterance == False:
+            tts("Sorry I didn't get that")
+        elif find_item(utterance) == None:
+            tts("Sorry I didn't get that")
+        elif utterance:
+            break
+        else:
+            tts("Sorry I didn't get that")
+        
+        if i == 1:
+            tts("Okay, bye")
+            sys.exit()
+            
     utterance_lower = utterance.lower() # Make it lowercase to avoid uppercase inconsistencies
 
     # PRovisional. Find what item the user said (eg. Heating, music, etc)

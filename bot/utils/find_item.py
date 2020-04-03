@@ -16,8 +16,6 @@ def find_item(utterance):
     elif ("lights" in split_uttrerance or "light" in split_uttrerance):
         item = "lights"
     else:
-        # Returns bot saying "Sorry I didnt get that"
-        tts(None, empty=True) # Text to speech "Sorry I didn't get that"
-        return
+        return None
 
     return item
