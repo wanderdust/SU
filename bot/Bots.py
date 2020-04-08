@@ -55,14 +55,19 @@ class Bots:
             utterance = self.speech.asr() # Listen to user's new input
 
             if utterance == False:
+                # Utterance is not recognised by tts. ASR returns false.
                 self.speech.tts("Sorry I didn't get that")
             elif self.utils.find_item(utterance, rasa_outptut) == None:
+                # Item specified by user is not found in known items.eg. "Turn on the kettle"
                 self.speech.tts("Sorry I couldn't find that device")
             elif utterance:
+                # If utterance is recognised, exit the loop.
                 break
             else:
-                self.speech.tts("Sorry I didn't get that. I'll repeat the options again.")
+                # If utterance not recognised.
+                self.speech.tts("Sorry I didn't get that.")
             
+            # After two iterations, if communication fails, shut down.
             if i == 1:
                 self.speech.tts("Okay, bye")
                 sys.exit()

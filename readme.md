@@ -21,7 +21,7 @@ Run each service manually.
 
 3. Open another tab in the terminal go to `/interface` and run `npm start`
 
-4. Open another tab in the terminal go to `/prediction` and run `rasa run actions -v`
+4. Open another tab in the terminal go to `/prediction` and run `rasa run actions --v`
 
 5. Open another tab in the terminal go to `/prediction` and run `rasa run`
 
