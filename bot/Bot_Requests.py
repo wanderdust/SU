@@ -33,10 +33,9 @@ class Bot_Requests:
         """
         Request for an answer from Rasa
         """
-        rand = random.randint(0,1000000)
 
         url = "http://localhost:5005/webhooks/rest/webhook"
-        data = {"sender": str(rand), "message": utterance}
+        data = {"message": utterance}
         json_data = json.dumps(data)
 
         r = requests.post(url, data = json_data)

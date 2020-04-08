@@ -52,19 +52,19 @@ class Bots:
         for i in range(2):
             self.speech.tts(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
 
-            utterance = self.speech.asr() # Listen to user's new input
+            user_utterance = self.speech.asr() # Listen to user's new input
 
-            if utterance == False:
-                # Utterance is not recognised by tts. ASR returns false.
+            if user_utterance == False:
+                # user_Utterance is not recognised by tts. ASR returns false.
                 self.speech.tts("Sorry I didn't get that")
-            elif self.utils.find_item(utterance, rasa_outptut) == None:
+            elif self.utils.find_item(user_utterance, rasa_outptut) == None:
                 # Item specified by user is not found in known items.eg. "Turn on the kettle"
                 self.speech.tts("Sorry I couldn't find that device")
-            elif utterance:
-                # If utterance is recognised, exit the loop.
+            elif user_utterance:
+                # If user_utterance is recognised, exit the loop.
                 break
             else:
-                # If utterance not recognised.
+                # If user_utterance not recognised.
                 self.speech.tts("Sorry I didn't get that.")
             
             # After two iterations, if communication fails, shut down.
@@ -73,18 +73,18 @@ class Bots:
                 sys.exit()
         
         # Make it lowercase to avoid uppercase inconsistencies
-        utterance_lower = utterance.lower()
+        user_utterance_lower = user_utterance.lower()
 
         # 3. Find what item the user said (eg. Heating, music, etc)
-        item = self.utils.find_item(utterance_lower, rasa_outptut)
+        item = self.utils.find_item(user_utterance_lower, rasa_outptut)
 
         # 4. Sending the request to the interface
-        print("Okay, turning {} {}".format(item, toggle))
+        rasa_final_output = self.bot_requests.request_rasa(user_utterance)
         
         try:
-            self.speech.tts("Okay, turning {} {}".format(item, toggle))
+            self.speech.tts(rasa_final_output)
         except:
             self.speech.tts("Okay")
-
+        print(item + " ********** "+toggle)
         command = {"object": item, "toggle": toggle}
         self.bot_requests.request_interface(command)
