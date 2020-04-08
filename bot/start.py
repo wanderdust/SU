@@ -7,8 +7,7 @@ class Start:
         self.speech = Speech_Handlers
 
     def start(self):
-        #utterance = self.start_utterance()
-        utterance = "Can you turn on the"
+        utterance = self.start_utterance()
         self.manager.redirect(utterance)
 
     def start_utterance(self):

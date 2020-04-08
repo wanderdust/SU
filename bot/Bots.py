@@ -24,7 +24,7 @@ class Bots:
         while True:
             utterance = self.speech.asr()
 
-            if utterance.lower() == "stop":
+            if utterance == False or utterance.lower() == "stop":
                 break
             alana_response =  self.bot_requests.request_alana(utterance)
             print(alana_response)

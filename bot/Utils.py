@@ -19,12 +19,12 @@ class Utils:
         Finds the object the user wants to select
         """
         item = "" # This is the variable that will hold the item
-        split_utterance = utterance.split(" ") # Split the user's input
+        split_utterance = utterance.lower().split(" ") # Split the user's input
         split_rasa_output = " ".join(rasa_output.lower().split("?")).split(" ") # Split Rasa's output
 
         items = [item for item in split_rasa_output if item == "music" 
                or item == "heating" or item == "tv" or item == "light"] # Identify the relevant items from Rasa's output]
-
+        print(utterance)
         # Identifies the item to be chosen from the user input
         if ("music" in split_utterance):
             item = "music"
