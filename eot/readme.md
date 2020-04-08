@@ -2,7 +2,7 @@
 
 `pip install -r requirements.txt`
 
-If you have any problems with the library pyaudio, used for speech recognition, try to run:
+(Optional) If you have any problems while installing the library pyaudio, used for speech recognition, try to run:
 
 `conda install nwani::portaudio nwani::pyaudio`
 
@@ -14,17 +14,22 @@ If you have any problems with `mpg123 not found` make sure you have installed th
 ```
 ./start.sh
 ```
+_____________
+
+**Only follow the instructions below if you want to test the API. Otherwise **IGNORE**.**
 
 ## Use requests to send a request
 
 It returns a tuple with three elements:
 
+`(pred_int, pred_string, confidence)`
+
     1. Prediction as an integer (0 incomplete, 1 complete)
     2. Prediction as string ("complete" or "incomplete")
-    3. Level of confidence for the prediction (as a percentage)
+    3. Level of confidence for the prediction. Closer to 0 is incomplete. Closer to 1 is complete.
 
 
-Example found in `bot/main.py`
+How to make a request to the API.
 ```
 import requests
 

@@ -1,14 +1,14 @@
 ## Download and install MONGODB
-1. [MongoDB download](https://www.mongodb.com/download-center/community). Save it in your home directory. If using Linux, select the TGZ option.
-2. Go to your home directory `cd ~` and create a folder called `mongodb-data`.
-3. Run `/home/username/mongodb/bin/mongod --dbpath=/home/username/mongodb-data` , where the first part is the direction to the mongodb folder, and the second one is the folder you created in step 2. Verify it works, if it does, you can shut the database for now.
+1. [MongoDB download](https://www.mongodb.com/download-center/community). Save it in your `/home` directory. If using Linux, select the **TGZ** package. If using mac, select the default package.
+2. In the `/home` directory, create a folder called `mongodb-data`. This is where the mongodb data will be stored.
+3. Run `/home/yourusername/mongodb/bin/mongod --dbpath=/home/yourusername/mongodb-data` , where the first part is the direction to the mongodb folder, and the second one is the folder you created in step 2. Verify it works, if it does, you can shut the database for now. Change `/yousername` for your username.
 
 ## Run web app
 1. Install node.js
 2. Go to the app directory `/interface` and run `npm install`
-3. Start the Database running `npm run start-db`. If that doesn't work, go to your home directory `cd ~` and run `/home/username/mongodb/bin/mongod --dbpath=/home/username/mongodb-data`, using your own paths. Then go to the app directory and run `npm run start-mongoose`. 
-4. Stop the database. And add execute permission to `start-db.sh` file with the command `chmod +u start-db.sh`
-5. Run the web app using `npm start`
+3. Add execute permissions to `start-db.sh` using the command `chmod +u start-db.sh`. This is the script that starts the database, so you need to be able to execute it.
+4. Start the program by running `npm start`. If any problems are found, refer to point 3 in *Download and Install MONGODB* and make sure you have it installed correctly. Make sure you also have node.js installed correctly.
+5. Look for the app in `localhost:3000`.
 
 ## Quick start (When everything has already has already been installed)
 `npm start`
