@@ -1,0 +1,98 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - named_selection
+  - named_activity
+  - cancel_interaction
+  - list_selection
+  - list_option
+  - utter_filler_ans1
+  - utter_filler_ans2
+  - utter_filler_ans3
+  - utter_filler_ans5
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_identify_location
+  - utter_location
+  - filler_sentence3_lights
+  - filler_sentence2_music
+  - filler_sentence1_heating
+
+entities:
+  - appliance
+  - activity
+  - filler
+  - location
+  - splitpoint
+
+slots:
+  appliance:
+    type: text
+  activity:
+    type: text
+  location:
+    type: text
+  appliancelist:
+    type: text
+
+actions:
+  - action_utter_response
+  - action_utter_activity
+
+responses:
+  utter_response:
+    - text: "Hey! its done"
+
+  utter_cancel:
+    - "No problem, what would you like me to do?"
+
+  utter_appliances_option:
+    - text: "Choose appliance (list Selection)"
+      buttons:
+        - title: "Oven"
+          payload: '/named_selection{"appliance": "Oven"}'
+        - title: "Lights"
+          payload: '/named_selection{"appliance": "Lights"}'
+        - title: "Heater"
+          payload: '/named_selection{"appliance": "Heater"}'
+        - title: "Music"
+          payload: '/named_selection{"appliance": "Music"}'
+        - title: "TV"
+          payload: '/named_selection{"appliance": "TV"}'
+
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_filler_ans1:
+    - text: Do you mean heating? or Do you mean music?
+  utter_filler_ans2:
+    - text: Do you mean Music? Do you mean TV? or Do you mean heating?
+  utter_filler_ans3:
+    - text: -text
+  utter_filler_ans5:
+    - text: Switch on the light?  Do you mean Oven? or Do you mean Heating?
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
