@@ -12,6 +12,8 @@ class Speech_Handlers:
         """
         Automatic Speech Recognition:
             Listens to the user and returns text.
+            * If utterance is understood, returns utterance
+            * If there is an error, returns Boolean False
         """
         r = sr.Recognizer()
 

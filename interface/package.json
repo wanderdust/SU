@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js & ./start-db.sh",
+    "start": "./start-db.sh & node server/server.js",
     "watch": "nodemon server/server.js",
     "start-db": "./start-db.sh",
     "mongoose": "node server/src/db/mongoose.js"
