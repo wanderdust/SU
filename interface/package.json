@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/server.js & ./start-db.sh",
     "watch": "nodemon server/server.js",
-    "start-db": "/home/pablo/mongodb/bin/mongod --dbpath=/home/pablo/mongodb-data && node server/src/db/mongoose.js",
+    "start-db": "./start-db.sh",
     "mongoose": "node server/src/db/mongoose.js"
   },
   "author": "",

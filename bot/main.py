@@ -11,8 +11,6 @@ from speech_handlers.asr import asr
 from speech_handlers.tts import tts
 
 
-
-
 utterance = asr(debug=True)
 
 def redirect (utterance):
