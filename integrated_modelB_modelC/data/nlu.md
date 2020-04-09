@@ -81,14 +81,10 @@
 - switch [the](splitpoint) [mmmm](filler) on
 
 ## intent:filler_sentence5
-- please switch on [hmmmm](filler)
+- please switch on [hmmmm](Turn up thfiller)
 - please switch on [ehh](filler)
 - please switch on [haaaa](filler)
 
-
-## intent: named_activity
-- [turn on](activity)
-- [turn off](activity)
 
 ## intent: named_selection
 - [Oven](appliance)
@@ -100,11 +96,12 @@
 - [TV](appliance)
 
 ## intent: list_selection
-- [first one](option)
-- [second one](option)
-- [middle one](option)
-- [third one](option)
-- [last one](option)
+- [first one](selection)
+- [second one](selection)
+- [second one](selection) please
+- [middle one](selection)
+- [third one](selection)
+- [last one](selection)
 
 
 ## intent: cancel_interaction

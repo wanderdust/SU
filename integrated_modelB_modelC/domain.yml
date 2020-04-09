@@ -29,6 +29,7 @@ entities:
   - filler
   - location
   - splitpoint
+  - selection
 
 slots:
   appliance:
@@ -37,12 +38,20 @@ slots:
     type: text
   location:
     type: text
-  appliancelist:
+  selection:
+    type: text
+  appliance1:
+    type: text
+  appliance2:
+    type: text
+  appliance3:
     type: text
 
 actions:
+  - action_utter_sentence_one
+  - action_utter_sentence_two
   - action_utter_response
-  - action_utter_activity
+  - action_utter_response_list
 
 responses:
   utter_response:

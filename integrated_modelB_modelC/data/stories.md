@@ -1,28 +1,24 @@
-## Prediction Model B
-* named_activity{"activity":"turn on"}
-  - action_utter_activity
-  - slot{"activity":"turn on"}
-
 ## help path Prediction Model B
 * greet
   - utter_greet
 * filler_sentence1_heating
-  - utter_filler_ans1
+  - action_utter_sentence_one
 * filler_sentence2_music
-  - utter_filler_ans2
+  - action_utter_sentence_two
   
 ## Named Selection Model C
 * named_selection{"appliance":"Oven"}
   - action_utter_response
   - slot{"appliance":"Oven"}
   
+## List Selection Model C
+* list_selection{"selection":"first one"}
+  - action_utter_response_list
+  - slot{"selection":"first one"}
+  
 ## Cancel Interaction
 * cancel_interaction
   - utter_cancel
-  
-## List Selection
-* list_selection{"option":"first one"}
-  - utter_appliances_option
   
 ## List Option
 * list_option
