@@ -1,7 +1,4 @@
-import speech_recognition as sr
 import os
-from gtts import gTTS
-from abc import ABC, abstractmethod
 
 class Speech_Handlers:
 
