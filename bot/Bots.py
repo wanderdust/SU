@@ -19,16 +19,16 @@ class Bots:
         print("Say 'Stop' to exit\n")
 
         alana_init = self.bot_requests.request_alana(initial_utterance)
-        print(alana_init)   
+        self.speech.tts(alana_init)   
 
         while True:
-            utterance = input(">> Your input:\n")
+            utterance = self.speech.asr()
 
             if utterance == False or utterance.lower() == "stop":
                 break
             alana_response =  self.bot_requests.request_alana(utterance)
             print(alana_response)
-            print(alana_response)
+            self.speech.tts(alana_response)
 
     def conversation_rasa (self, initial_utterance, toggle):
         """
@@ -45,31 +45,31 @@ class Bots:
 
         # If rasa's response is empty, end conversation.
         if rasa_outptut == False:
-            print("Sorry I didn't get that") # text to speech "Sorry I didn't get that"
+            self.speech.tts("Sorry I didn't get that") # text to speech "Sorry I didn't get that"
             return
 
         # 2. Gives the user 2 chances to give a utterance
         for i in range(2):
-            print(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
+            self.speech.tts(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
 
-            user_utterance = input(">> Your input:\n") # Listen to user's new input
+            user_utterance = self.speech.asr() # Listen to user's new input
 
             if user_utterance == False:
                 # user_Utterance is not recognised by tts. ASR returns false.
-                print("Sorry I didn't get that")
+                self.speech.tts("Sorry I didn't get that")
             elif self.utils.find_item(user_utterance, rasa_outptut) == None:
                 # Item specified by user is not found in known items.eg. "Turn on the kettle"
-                print("Sorry I couldn't find that device")
+                self.speech.tts("Sorry I couldn't find that device")
             elif user_utterance:
                 # If user_utterance is recognised, exit the loop.
                 break
             else:
                 # If user_utterance not recognised.
-                print("Sorry I didn't get that.")
+                self.speech.tts("Sorry I didn't get that.")
             
             # After two iterations, if communication fails, shut down.
             if i == 1:
-                print("Okay, bye")
+                self.speech.tts("Okay, bye")
                 sys.exit()
         
         # Make it lowercase to avoid uppercase inconsistencies
@@ -82,8 +82,8 @@ class Bots:
         rasa_final_output = self.bot_requests.request_rasa(user_utterance)
         
         try:
-            print(rasa_final_output)
+            self.speech.tts(rasa_final_output)
         except:
-            print("Okay")
+            self.speech.tts("Okay")
         command = {"object": item, "toggle": toggle}
         self.bot_requests.request_interface(command)

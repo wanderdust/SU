@@ -11,7 +11,7 @@ class Start:
         self.manager.redirect(utterance)
 
     def start_utterance(self):
-        return input(">> Your input: \n")
+        return self.speech.asr(" ")
 
 bot = Start()
 bot.start()
