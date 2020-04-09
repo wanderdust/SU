@@ -24,7 +24,6 @@ class Utils:
 
         items = [item for item in split_rasa_output if item == "music" 
                or item == "heating" or item == "tv" or item == "light"] # Identify the relevant items from Rasa's output]
-        print(utterance)
         # Identifies the item to be chosen from the user input
         if ("music" in split_utterance):
             item = "music"

@@ -16,7 +16,7 @@ class Conversation_Manager:
         """
         # This handles error in case of timeout in the ASR when utterance is emtpy.
         if utterance == False:
-            self.speech.tts("Sorry I didn't hear you. Bye!")
+            print("Sorry I didn't hear you. Bye!")
             return
 
         toggle = self.utils.find_toggle(utterance) # Catches the intent "on" or "off"
