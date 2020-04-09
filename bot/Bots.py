@@ -85,6 +85,5 @@ class Bots:
             self.speech.tts(rasa_final_output)
         except:
             self.speech.tts("Okay")
-        print(item + " ********** "+toggle)
         command = {"object": item, "toggle": toggle}
         self.bot_requests.request_interface(command)
