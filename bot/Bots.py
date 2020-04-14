@@ -26,8 +26,8 @@ class Bots:
 
             if utterance == False or utterance.lower() == "stop":
                 break
+                
             alana_response =  self.bot_requests.request_alana(utterance)
-            print(alana_response)
             self.speech.tts(alana_response)
 
     def conversation_rasa (self, initial_utterance, toggle):

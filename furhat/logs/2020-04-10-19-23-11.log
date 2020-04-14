@@ -1,0 +1,30 @@
+19:23:11 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.0.24:1932
+19:23:12 [Quiz] INFO  Quiz:173 - Starting skill
+19:23:24 [Quiz] ERROR TriggerRunner: 33 - Error
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:143)
+	at Client.write(Client.kt:45)
+	at Client.run(Client.kt:36)
+	at furhatos.app.quiz.FlowKt$SendMessages$1$2.invoke(flow.kt:84)
+	at furhatos.app.quiz.FlowKt$SendMessages$1$2.invoke(flow.kt)
+	at furhatos.flow.kotlin.TriggerRunner.run(TriggerRunner.kt:31)
+	at furhatos.flow.kotlin.Runner.runTrigger(Runner.kt:203)
+	at furhatos.flow.kotlin.Runner.runTrigger$default(Runner.kt:175)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:57)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.quiz.Quiz.start(main.kt:8)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:176)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:234)
+	at java.lang.Thread.run(Thread.java:748)
+19:23:24 [ErrorLoggingThread] ERROR Quiz:466 - Exception in thread "Thread-5" java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1540)
+	at Client.read(Client.kt:50)
+	at Client.access$read(Client.kt:15)
+	at Client$run$1.invoke(Client.kt:27)
+	at Client$run$1.invoke(Client.kt:15)
+	at kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
+
+19:24:58 [EventSystem] INFO  Quiz:191 - Terminating skill

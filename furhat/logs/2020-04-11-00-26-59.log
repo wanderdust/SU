@@ -1,0 +1,6 @@
+00:26:59 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.0.24:1932
+00:26:59 [Quiz] INFO  Quiz:173 - Starting skill
+00:27:08 [Quiz] WARN  Flow: 93 - Flow unknown unresponsive, 2014 ms since last event poll
+00:32:37 [ErrorLoggingThread] ERROR Quiz:466 - Flow - unknown - A flow's queue is full, could not add furhatos.event.responses.ResponseRobotVersion
+Flow - unknown - A flow's queue is full, could not add furhatos.event.responses.ResponseSpeaker
+

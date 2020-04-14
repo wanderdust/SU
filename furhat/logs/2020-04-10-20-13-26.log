@@ -1,0 +1,17 @@
+20:13:26 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.0.24:1932
+20:13:26 [Quiz] INFO  Quiz:173 - Starting skill
+20:13:40 [Quiz] ERROR TriggerRunner: 33 - Error
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1540)
+	at furhatos.app.quiz.FlowKt$SendMessages$1$2.invoke(flow.kt:87)
+	at furhatos.app.quiz.FlowKt$SendMessages$1$2.invoke(flow.kt)
+	at furhatos.flow.kotlin.TriggerRunner.run(TriggerRunner.kt:31)
+	at furhatos.flow.kotlin.Runner.runTrigger(Runner.kt:203)
+	at furhatos.flow.kotlin.Runner.runTrigger$default(Runner.kt:175)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:57)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.quiz.Quiz.start(main.kt:8)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:176)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:234)
+	at java.lang.Thread.run(Thread.java:748)
