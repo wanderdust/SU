@@ -45,7 +45,6 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
                 f.close()
                 self.request.sendall(res.encode())
 
-
         #if 'asr' in resp:
             #open and read the file after the appending:
             #f = open("furhat.txt", "r")
