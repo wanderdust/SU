@@ -26,8 +26,8 @@ class Bots:
 
             if utterance == False or utterance.lower() == "stop":
                 break
+                
             alana_response =  self.bot_requests.request_alana(utterance)
-            print(alana_response)
             self.speech.tts(alana_response)
 
     def conversation_rasa (self, initial_utterance, toggle):
@@ -53,6 +53,7 @@ class Bots:
             self.speech.tts(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
 
             user_utterance = self.speech.asr() # Listen to user's new input
+            print("You just said: " + user_utterance)
 
             if user_utterance == False:
                 # user_Utterance is not recognised by tts. ASR returns false.
@@ -74,16 +75,18 @@ class Bots:
         
         # Make it lowercase to avoid uppercase inconsistencies
         user_utterance_lower = user_utterance.lower()
-
+        
         # 3. Find what item the user said (eg. Heating, music, etc)
         item = self.utils.find_item(user_utterance_lower, rasa_outptut)
 
-        # 4. Sending the request to the interface
-        rasa_final_output = self.bot_requests.request_rasa(user_utterance)
-        
+        rasa_final_output = "Okay, I will turn the {} {}".format(item, toggle)
+        print(rasa_final_output)
         try:
             self.speech.tts(rasa_final_output)
+            print("Furhat should be talking here")
         except:
             self.speech.tts("Okay")
+
+        # 4. Sending the request to the interface
         command = {"object": item, "toggle": toggle}
         self.bot_requests.request_interface(command)
