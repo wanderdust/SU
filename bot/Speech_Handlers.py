@@ -39,7 +39,7 @@ class Speech_Handlers:
         return user_input
 
 
-    def tts(self, utterance):
+    def tts(self, utterance, wait=False):
         #utterance = "from the bot+"+utterance
         #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         #client.connect(('localhost', 9999))
@@ -53,4 +53,8 @@ class Speech_Handlers:
         f = open("resp.txt", "w")
         f.write(utterance)
         f.close()
-        time.sleep(4)
+        
+        if wait:
+            time.sleep(10)
+        else:
+            time.sleep(4)
