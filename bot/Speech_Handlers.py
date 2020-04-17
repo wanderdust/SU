@@ -53,4 +53,4 @@ class Speech_Handlers:
         f = open("resp.txt", "w")
         f.write(utterance)
         f.close()
-        time.sleep(4)
+        time.sleep(10)

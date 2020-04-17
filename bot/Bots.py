@@ -49,29 +49,22 @@ class Bots:
             return
 
         # 2. Gives the user 2 chances to give a utterance
-        for i in range(2):
+        while True:
             self.speech.tts(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
 
             user_utterance = self.speech.asr() # Listen to user's new input
             print("You just said: " + user_utterance)
 
-            if user_utterance == False:
-                # user_Utterance is not recognised by tts. ASR returns false.
-                self.speech.tts("Sorry I didn't get that")
-            elif self.utils.find_item(user_utterance, rasa_outptut) == None:
+            if self.utils.find_item(user_utterance, rasa_outptut) == None:
                 # Item specified by user is not found in known items.eg. "Turn on the kettle"
                 self.speech.tts("Sorry I couldn't find that device")
+                print(self.utils.find_item(user_utterance, rasa_outptut))
             elif user_utterance:
                 # If user_utterance is recognised, exit the loop.
                 break
             else:
                 # If user_utterance not recognised.
                 self.speech.tts("Sorry I didn't get that.")
-            
-            # After two iterations, if communication fails, shut down.
-            if i == 1:
-                self.speech.tts("Okay, bye")
-                sys.exit()
         
         # Make it lowercase to avoid uppercase inconsistencies
         user_utterance_lower = user_utterance.lower()

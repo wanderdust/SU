@@ -1,0 +1,10 @@
+18:19:23 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.0.24:1932
+18:19:23 [Quiz] INFO  Quiz:173 - Starting skill
+18:19:35 [ErrorLoggingThread] ERROR Quiz:466 - Exception in thread "Thread-5" java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1540)
+	at Client.read(Client.kt:49)
+	at Client.access$read(Client.kt:15)
+	at Client$run$1.invoke(Client.kt:27)
+	at Client$run$1.invoke(Client.kt:15)
+	at kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
+

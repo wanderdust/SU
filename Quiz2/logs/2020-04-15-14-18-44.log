@@ -1,0 +1,4 @@
+14:18:44 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.250:1932
+14:18:44 [Quiz] INFO  Quiz:173 - Starting skill
+14:18:51 [Quiz] WARN  Furhat:179 - furhat.say() was called with an empty string
+14:18:51 [Quiz] WARN  Furhat:179 - furhat.say() was called with an empty string
