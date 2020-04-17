@@ -1,0 +1,4 @@
+23:40:28 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.0.24:1932
+23:40:28 [Quiz] INFO  Quiz:173 - Starting skill
+23:40:37 [Quiz] WARN  Flow: 93 - Flow unknown unresponsive, 2018 ms since last event poll
+23:41:14 [EventSystem] INFO  Quiz:191 - Terminating skill

@@ -1,49 +1,60 @@
-import speech_recognition as sr
 import os
-from gtts import gTTS
-from abc import ABC, abstractmethod
+import socket
+import time
 
 class Speech_Handlers:
 
     def __init__(self):
+
         pass
 
     def asr(self):
-        """
-        Automatic Speech Recognition:
-            Listens to the user and returns text.
-            * If utterance is understood, returns utterance
-            * If there is an error, returns Boolean False
-        """
-        r = sr.Recognizer()
+        #data = 'asr - get speech data'
+        #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #client.connect(('localhost', 9999))
+        #client.send(data.encode())
+        #user_input = client.recv(4096)
+        #user_input = (user_input.decode('utf-8'))
+        #client.close()
 
-        mic = sr.Microphone()
 
-        with mic as source:
-            r.adjust_for_ambient_noise(source)
-            r.dynamic_energy_threshold = False
-            print("Microphone Listening")
+        f = open("furhat.txt", "r")
 
-            try:
-                audio = r.listen(source, timeout=3, phrase_time_limit=5)
-            except:
-                user_input = False
+        user_input = str(f.read())
 
-            print("Interpreting... ")
+        #user_input = input(">> Your utterance:\n")
 
-            try:
-                user_input = r.recognize_google(audio)
+        #if user_input.strip() == "":
+        #    return False
 
-            except:
-                user_input = False
+        while not user_input:
+            f = open("furhat.txt", "r")
+
+            user_input = str(f.read())
+
+        print (user_input)
+        f = open("furhat.txt", "w")
+        f.write("")
+        f.close()
         return user_input
 
-    def tts(self, utterance):
-        """
-        Text to speech. 
-            Takes some text and converts it to speech.
-        """
-        language = "en"
-        myobj = gTTS(text=utterance, lang=language, slow=False)
-        myobj.save("audio/text.mp3") 
-        os.system("mpg123 audio/text.mp3")
+
+    def tts(self, utterance, wait=False):
+        #utterance = "from the bot+"+utterance
+        #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #client.connect(('localhost', 9999))
+        #client.send(utterance.encode())
+
+        #client.close()
+        f = open("furhat.txt", "w")
+        f.write(utterance)
+        f.close()
+
+        f = open("resp.txt", "w")
+        f.write(utterance)
+        f.close()
+        
+        if wait:
+            time.sleep(10)
+        else:
+            time.sleep(4)
