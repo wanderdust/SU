@@ -50,10 +50,9 @@ class Bots:
 
         # 2. Gives the user 2 chances to give a utterance
         while True:
-            self.speech.tts(rasa_outptut) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
+            self.speech.tts(rasa_outptut, wait=True) # text to speech of Rasa's output. Eg. "Do you mean lights? Do you mean heating?""
 
             user_utterance = self.speech.asr() # Listen to user's new input
-            print("You just said: " + user_utterance)
 
             if self.utils.find_item(user_utterance, rasa_outptut) == None:
                 # Item specified by user is not found in known items.eg. "Turn on the kettle"
@@ -76,7 +75,6 @@ class Bots:
         print(rasa_final_output)
         try:
             self.speech.tts(rasa_final_output)
-            print("Furhat should be talking here")
         except:
             self.speech.tts("Okay")
 
