@@ -11,11 +11,12 @@
 5. Look for the app in `localhost:3000`.
 
 ## Quick start (When everything has already has already been installed)
+`npm start-db`
+and then 
 `npm start`
 
 Now the api should be on `localhost:3000`.
-
-__________
+________
 
 ## Making a request
 
