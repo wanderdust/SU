@@ -28,12 +28,12 @@ Double click next to furhat to add a user.
 
 #### Option A:
 
-Start Furhat. In `localhost:8080` > Dashboard add a new person by double clicking next to furhat.
+Start Furhat sdk. In `localhost:8080` > `Dashboard` add a new person (If you haven't done so already) by double clicking next to furhat.
 Run `./app.sh`. Multiple bash terminals will open each running a unique service.
 
 The last terminal will ask you to run `python start.sh`. Run it.
 
-Finally Run Quiz2 from IntelliJ to run the furhat Skill.
+Finally Run furhat from IntelliJ to run the furhat Skill.
 
 #### Option B:
 
@@ -51,9 +51,9 @@ Run each service manually.
 
 6. Run `python start.py` in `bot/` to start the bot.
 
-7. Run Furhat if you haven't done so yet. In `localhost:8080/#/dashboard` add a new person by double clicking next to furhat.
+7. Run Furhat sdk if you haven't done so yet. In `localhost:8080/#/dashboard` add a new person by double clicking next to furhat.
 
-8. Run Quiz2 from IntelliJ. 
+8. Run furhat from IntelliJ. 
 
 
 # DEMO
