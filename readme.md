@@ -8,7 +8,7 @@ Install all the requirements for each module. These modules are
 
 ## Running the Project:
 
-### Step 1. Run Furhat and the Furhat Skill
+### Step 1. Get the furhat skill working
 
 Open IntelliJ and select `Create new Project`. Select `Kotlin` and` JVM | IDEA` and click Next. In Project name browse `./furhat` and click Finish. 
 
@@ -16,7 +16,7 @@ At the bottom right of the screen you should see a small window that asks if you
 
 ![image](/interface/public/images/gradle.png)
 
-Then go to `Run` > `Edit Configurations`. Then add `Kotlin` by pressing on "`+`" in the upper left corner. In the next window select `Quiz2.main` for "`Use classpath for module`" and then in `Main class` browse and select `furhatos.app.quiz2.MainKt`. Click the "`Run`" button (green triangle) and the program should start running.
+Then go to `Run` > `Edit Configurations`. Then add `Kotlin` by pressing on "`+`" in the upper left corner. In the next window select `furhat.main` for "`Use classpath for module`" and then in `Main class` browse and select `furhatos.app.quiz.MainKt`. Click the "`Run`" button (green triangle) and the program should start running.
 
 Run Furhat and make sure your Furhat SDK is open in `localhost:8080/#/dashboard`.
 
@@ -56,7 +56,7 @@ Run each service manually.
 8. Run Quiz2 from IntelliJ. 
 
 
-## DEMO
+# DEMO
 
 Click on the image to watch a youtube video.
 
