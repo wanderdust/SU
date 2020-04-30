@@ -29,20 +29,22 @@ class Conversation_Manager:
             # Response from LSTM
             #   response.json()['pred_int'] == 0 --> incomplete
             #   response.json()['pred_int] == 1 --> complete
-
-            if response.json()['pred_int'] == 0:
-                # Redirect to our bot HERE!
-                self.bots.conversation_rasa(utterance, toggle)
-            else:
-                # if response is 1 it is complete. Redirect to Alana.
-                self.bots.conversation_alana(utterance)
+            print(response.json()['pred_int'])
+            self.bots.conversation_rasa(utterance, toggle)
+            #if response.json()['pred_int'] == 0:
+            # Redirect to our bot HERE!
+                #self.bots.conversation_rasa(utterance, toggle)
+            #else:
+                #if response is 1 it is complete. Redirect to Alana.
+                #self.bots.conversation_alana(utterance)
         else:
             # Response from the script if lstm fails
             bot = self.utils.check(utterance, toggle)
+            self.bots.conversation_rasa(utterance, toggle)
 
-            if bot == "rasa":
-                self.bots.conversation_rasa(utterance, toggle)
-            else:
-                self.bots.conversation_alana(utterance)
+            #if bot == "rasa":
+                #self.bots.conversation_rasa(utterance, toggle)
+            #else:
+                #self.bots.conversation_alana(utterance)
 
         

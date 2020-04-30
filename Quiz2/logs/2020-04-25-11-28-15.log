@@ -1,0 +1,5 @@
+11:28:15 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.250:1932
+11:28:15 [Quiz] INFO  Quiz:173 - Starting skill
+11:33:36 [ErrorLoggingThread] ERROR Quiz:466 - Flow - unknown - A flow's queue is full, could not add furhatos.event.actions.ActionGesture
+Flow - unknown - A flow's queue is full, could not add furhatos.event.monitors.MonitorGestureStart
+

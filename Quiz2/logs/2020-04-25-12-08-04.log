@@ -1,0 +1,5 @@
+12:08:04 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.250:1932
+12:08:04 [Quiz] INFO  Quiz:173 - Starting skill
+12:08:20 [Quiz] WARN  Flow: 93 - Flow unknown unresponsive, 2011 ms since last event poll
+12:08:30 [Quiz] WARN  Flow: 93 - Flow unknown unresponsive, 2004 ms since last event poll
+12:18:11 [Broker Client] ERROR BrokerClient:152 - Unexpected disconnect from broker

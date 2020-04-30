@@ -46,9 +46,9 @@ templates:
   utter_filler_ans2:
   - text: Do you mean Music? Do you mean TV? or Do you mean heating?
   utter_filler_ans3:
-  - text: -text
+  - text: Do you want to switch on the lights? or the TV?
   utter_filler_ans5:
-  - text: Switch on the light?  Do you mean Oven? or Do you mean Heating?
+  - text: Switch on the light? or Do you mean Heating?
   utter_goodbye:
   - text: Bye
   utter_greet:

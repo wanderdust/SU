@@ -6,11 +6,11 @@ class Utils:
         """
         Finds the "on" or "off" within a sentence
         """
-        toggle = "off" #default
+        toggle = "on" #default
         split_utterance = utterance.split(" ")
 
-        if ("on" in split_utterance):
-            toggle ="on"
+        if ("off" in split_utterance):
+            toggle ="off"
 
         return toggle
 
