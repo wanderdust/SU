@@ -1,3 +1,6 @@
+Don't want to use Furhat, just voice? Then use branch no-furhat.
+
+
 ## Install requirements
 
 Install all the requirements for each module. These modules are
